@@ -1,4 +1,10 @@
-
+# -*- encoding=utf-8 -*-
+#!/usr/bin/python3
+"""
+Created on 2020/jan
+Update on 
+@author: Sandro Regis Cardoso
+"""
 
 from redis import Redis, RedisError, ResponseError
 import ast
@@ -30,7 +36,7 @@ class _RedisUtils(object):
                 #garbage discharge
                 del(sbkn)
                 del(sbk_redis_quee)
-                
+            
             #garbage discharge
             del(index)
             del(hash_name)
