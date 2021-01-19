@@ -8,8 +8,6 @@ Update on 2021/jan
  
 import os
 from time import sleep
-
-from modules.Simple_Recog import SpeechRecog
 import speech_recognition as sr
 
 
@@ -153,8 +151,7 @@ class Nutcracker(object):
     
     def __executarQuebraNozes(self):
         try:
-            sr = SpeechRecog()
-            captcha = sr.obterCaptcha(timewait=5)
+            captcha = self.obterCaptcha(timewait=5)
             return captcha
         except Exception as ex:
             raise ex
