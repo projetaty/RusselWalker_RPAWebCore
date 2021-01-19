@@ -1,0 +1,132 @@
+sites:
+-  name: Pernambuco
+   convenio: 1
+   url: https://localhost/site1 #http://192.168.0.80/site_pe
+   login_page:
+         campo_login: '//*[@id="login"]'
+         campo_senha: '//*[@id="senha"]'
+         campo_captcha: '//*[@id="captcha"]'
+         objeto_captcha: '/html/body/div/form/table/tbody/tr[1]/td[3]/span'
+         objeto_player: ''
+         botao_confirmar: '//*[@id="enviar"]'
+         confirmacao_de_acesso: '//*[@id="login_message"]'
+         erro_de_captcha: ''
+         erro_de_login: ''
+   tipo: flux_to_flux
+   auth:
+      operador: operador1
+      senha: 123
+   launch:
+      status: true
+      module: customers.Site1.main_site1
+      main_class: main_site1
+      #pgm: ./bin/scrapping_site_pernambuco.py
+      #main_class: /opt/ides/rpa/Site1/main.py
+      param:
+      - -c
+      - ./config/scrapping_site_pernambuco.yaml
+      - -t
+      - '1'
+   remote:
+      #https://www.peconsig.pe.gov.br/pe/v3/autenticaroperador?t=20190909101949#no-back
+      arquivo_dados_erro: ./data/excessao_site_1.json
+      max_tentativas: 3
+      browser_config:
+         browser: Firefox
+#profile: ~/.config/google-chrome/Default/
+         experimental_options:
+# extentions:
+            profile.default_content_settings.popups: 0
+# - ./extentions/chrome_proxy.zip
+# preferences:
+#   user-agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36 Edge/15.15063"
+            download.default_directory: null
+            download.prompt_for_download: false
+            directory_upgrade: true
+            plugins.always_open_pdf_externally: true
+-  name: Dourados
+   convenio: 2
+   url: https://localhost/site2 #http://192.168.0.80/site_dourados
+   login_page: 
+         campo_login: '//*[@id="login"]'
+         campo_senha: '//*[@id="senha"]'
+         campo_captcha: '//*[@id="captcha"]'
+         objeto_captcha: '/html/body/div/form/table/tbody/tr[1]/td[3]/span'
+         objeto_player: ''
+         botao_confirmar: '//*[@id="enviar"]'
+         confirmacao_de_acesso: '//*[@id="login_message"]'
+         erro_de_captcha: ''
+         erro_de_login: ''
+   tipo: flux_to_flux
+   auth:
+      operador: operador2
+      senha: 123
+   launch:
+      status: true
+      module: customers.Site2.models.averbacao_site2
+      main_class: AverbacaoSite2
+      param:
+      - -c
+      - ./config/scrapp_site_dourados.yaml
+      - -t
+      - '1'
+   remote:
+      #https://www.peconsig.pe.gov.br/pe/v3/autenticaroperador?t=20190909101949#no-back
+      arquivo_dados_erro: ./data/excessao_site_2.json
+      max_tentativas: 3
+      browser_config:
+         browser: Firefox
+         experimental_options:
+            profile.default_content_settings.popups: 0
+            download.default_directory: null
+            download.prompt_for_download: false
+#profile: ~/.config/google-chrome/Default/
+            directory_upgrade: true
+# extentions:
+# - ./extentions/chrome_proxy.zip
+# preferences:
+#   user-agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36 Edge/15.15063"
+            plugins.always_open_pdf_externally: true
+-  name: Londrina
+   convenio: 3
+   url: https://localhost/site3
+   login_page: 
+         campo_login: '//*[@id="login"]'
+         campo_senha: '//*[@id="senha"]'
+         campo_captcha: '//*[@id="captcha"]'
+         objeto_captcha: '/html/body/div/form/table/tbody/tr[1]/td[3]/span'
+         objeto_player: ''
+         botao_confirmar: '//*[@id="enviar"]'
+         confirmacao_de_acesso: '//*[@id="login_message"]'
+         erro_de_captcha: ''
+         erro_de_login: ''
+   tipo: flux_to_flux
+   auth:
+      operador: operador3
+      senha: 123
+   launch:
+      status: false
+      module: customers.Site3.models.averbacao_site3
+      main_class: AverbacaoSite3
+      param:
+      - -c
+      - ./config/scrapp_site_londrina.yaml
+      - -t
+      - '1'
+   remote:
+      #https://www.peconsig.pe.gov.br/pe/v3/autenticarusuario?t=20190909101949#no-back
+      arquivo_dados_erro: ./data/excessao_site_3.json
+      max_tentativas: 3
+      browser_config:
+         browser: Firefox
+         experimental_options:
+            profile.default_content_settings.popups: 0
+            download.default_directory: null
+            download.prompt_for_download: false
+#profile: ~/.config/google-chrome/Default/
+            directory_upgrade: true
+# extentions:
+# - ./extentions/chrome_proxy.zip
+# preferences:
+#   user-agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36 Edge/15.15063"
+            plugins.always_open_pdf_externally: true

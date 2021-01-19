@@ -1,0 +1,46 @@
+loggin:
+   disable_existing_loggers: false
+   formatters:
+      normal:
+         datefmt: '%Y-%m-%dT%H:%M:%S%z'
+         format: '%(asctime)s %(name)-16s %(levelname)-8s %(threadName)-20s %(funcName)-24s %(message)s'
+   handlers:
+      console:
+         class: logging.StreamHandler
+         level: DEBUG
+         formatter: normal
+         stream: ext://sys.stdout
+      file_handler:
+         backupCount: 30
+         class: logging.handlers.TimedRotatingFileHandler
+         delay: true
+         encoding: utf8
+         filename: ./log/query.log
+         formatter: normal
+         interval: 1
+         level: DEBUG
+         when: midnight
+   root:
+      handlers:
+      - file_handler
+      - console
+#- Logstash_handler
+      level: DEBUG
+   version: 1
+queue_server:
+   db: 0
+   host: 127.0.0.1
+   password: AAABBBCCC
+   port: 6379
+   input:
+      file: ./data/exemplo_fila_redis.json
+      minimo_busca: 2
+#url: http://10.151.31.21:4001/process/dequeue/5d8cc830d3a0303386861289
+      iddataflow: 5d8cc724d3a030d48186123e
+      auth: jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJOUyIsImF1ZCI6InNtYXJ0Lm5zcG9ydGFsLmNvbS5iciIsInN1YiI6IjVhZmFjZWJjMzU2ZDhlNmQ4OGUyMzAxZCIsInNjb3BlIjpbIm1hc3Rlcjp0cnVlIl0sImlhdCI6MTUyODIzNzkyNX0.IgcapigIWPe_GzAQqDz4NbYw3bxgB6uQ9t3xL5piNXc
+   output:
+      file: ./data/exemplo_fila_redis_out.json
+      file_erro_confirmacao: ./data/dados_erro_amil_web.json
+#url: http://10.151.31.21:4001/process/enqueue/5d8cc830d3a0303386861289
+      iddataflow: 5d8cc724d3a030d48186123e
+      auth: jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJOUyIsImF1ZCI6InNtYXJ0Lm5zcG9ydGFsLmNvbS5iciIsInN1YiI6IjVhZmFjZWJjMzU2ZDhlNmQ4OGUyMzAxZCIsInNjb3BlIjpbIm1hc3Rlcjp0cnVlIl0sImlhdCI6MTUyODIzNzkyNX0.IgcapigIWPe_GzAQqDz4NbYw3bxgB6uQ9t3xL5piNXc

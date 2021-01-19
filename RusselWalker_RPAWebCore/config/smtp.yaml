@@ -1,0 +1,17 @@
+smtp-server:
+   smtp:
+      - name:
+         destinatarios:
+            copia:
+            - rootnuts@gmail.com
+            nome_principal: 'Sandro Regis Cardoso'
+         remetente:
+            email: 'projetaty@gmail.com'
+            nome: 'Sandro Regis'
+         server:
+            autenticacao:
+               senha: '88888888888888'
+               usuario:   'projetaty@gmail.com'
+            host: 'localhost'
+            port: 25
+         subject: 'E-mail enviado pelo C.A.I.O | RPA'
