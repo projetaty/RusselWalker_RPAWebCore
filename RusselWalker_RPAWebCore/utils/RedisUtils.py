@@ -2,7 +2,7 @@
 #!/usr/bin/python3
 """
 Created on 2020/jan
-Update on 
+Update on 2021/jan
 @author: Sandro Regis Cardoso
 """
 
@@ -11,7 +11,7 @@ import ast
 
 class _RedisUtils(object):
     
-    _name="redis.utils"
+    _name="_redis.utils"
     
     def _readRedisQueue(self, queue:Redis)->list:
         __redis_queue = []
@@ -28,7 +28,7 @@ class _RedisUtils(object):
                     for indx, vv in enumerate(subkey_redis_queue):
                         #indx -> utilizar para remover da quee
                         __redis_queue.append(vv)
-                        
+                    
                     #garbage discharge
                     del(indx)
                     del(vv)
