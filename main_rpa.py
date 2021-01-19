@@ -2,7 +2,7 @@
 #!/usr/bin/python3
 """
 Created on 20200125
-Update on 2021/jan
+Updated on 2021/jan
 @author: Sandro Regis Cardoso
 """
 import logging
@@ -10,7 +10,9 @@ from bin.rpa.System import BootStrap as System
 from redis.exceptions import RedisError
 import time as __timer
 from utils.WebDriverSingleton import WebBrowser as __WEBBROWSER
+
 #from pexecute.process import ProcessLoom
+
 """
 import importlib
 import json
@@ -34,8 +36,10 @@ def main():
         __tmr_limit             = 5
         __redisQueueServIsActive= __system._REDIS_SERVICE.ping()
         
-        """runForms = ProcessLoom(max_runner_cap=8)
-        workload = []"""
+        """
+        runForms = ProcessLoom(max_runner_cap=8)
+        workload = []
+        """
         while __redisQueueServIsActive == True:
             #bloco de test para verificar a inclusão de um novo registro na fila
             #melhorar esta chamada futuramente
