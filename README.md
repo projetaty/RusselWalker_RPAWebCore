@@ -8,4 +8,4 @@ RPA for automation on web forms is a homanage to Phd Prof. Russel Walker
 
 2) Create unit tests and respective project suite test;
 
-3) Lauch first official version;
+3) Launch first official version;
