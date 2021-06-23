@@ -1,5 +1,5 @@
 # RusselWalker_RPAWebCore
-RPA for automation on web forms is a homanage to Phd Prof. Russel Walker
+RPA for automation on web forms is a homanage to Phd <a href="http://www.russellwalkerphd.com/about" target="_blank">Prof. Russel Walker</a>
 
 
 @TODO
